@@ -10,9 +10,7 @@ import Foundation
 //  MARK: - Presenter Delegate
 //-----------------------------------------------------------------------
 
-protocol LoginPresenterDelegate: BasePresenterDelegate {
-    func dataLoaded()
-}
+protocol LoginPresenterDelegate: BasePresenterDelegate { }
 
 //-----------------------------------------------------------------------
 //  MARK: - Presenter
@@ -26,5 +24,16 @@ class LoginPresenter: BasePresenter<LoginRouter, LoginViewController> {
         self.delegate = delegate
         
         super.init()
+    }
+    
+    func makeLogin(gitHubUser: String?) {
+        guard let user = gitHubUser, !user.isEmpty else {
+            
+            delegate.alert(Constants.Message.GitHubUserRequired, .warning)
+            
+            return
+        }
+        
+        delegate.loading(true)
     }
 }

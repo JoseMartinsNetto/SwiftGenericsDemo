@@ -16,9 +16,16 @@ class BaseViewController: UIViewController,
                           BaseViewControllerProtocol,
                           BasePresenterDelegate {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configUI()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        loadUI()
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
@@ -35,7 +42,9 @@ class BaseViewController: UIViewController,
     
     // MARK: - BasePresenterDelegate
     
-    func message(message: String?, type: MessageType) { }
+    func alert(_ message: String, _ type: MessageType) {
+        AlertHelper.showAlert(message: message, type: type)
+    }
     
     func loading(_ loading: Bool) { }
     

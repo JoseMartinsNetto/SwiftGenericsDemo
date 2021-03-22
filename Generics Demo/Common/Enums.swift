@@ -15,3 +15,12 @@ enum PresentationStyle {
     case modal
     case push
 }
+
+enum RequestType {
+    case get
+    case post
+    case put
+    case patch
+    case delete
+    case formEncoded
+}

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol BasePresenterDelegate {
-    func message(message: String?, type: MessageType)
+    func alert(_ message: String, _ type: MessageType)
     func loading(_ loading: Bool)
 }
 

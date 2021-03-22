@@ -1,0 +1,20 @@
+PODS:
+  - RKDropdownAlert (0.3.0)
+  - TPKeyboardAvoiding (1.3.4)
+
+DEPENDENCIES:
+  - RKDropdownAlert (= 0.3.0)
+  - TPKeyboardAvoiding (= 1.3.4)
+
+SPEC REPOS:
+  trunk:
+    - RKDropdownAlert
+    - TPKeyboardAvoiding
+
+SPEC CHECKSUMS:
+  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
+  TPKeyboardAvoiding: 7c2187e2338052b2c5be4a8052f297fdb124e261
+
+PODFILE CHECKSUM: 3a8486e877d08b64102f6121ed87298a007eeaa6
+
+COCOAPODS: 1.10.0

@@ -11,21 +11,13 @@ class LoginViewController: BaseViewController,
     
     var presenter: LoginPresenter!
     
+    @IBOutlet var txtUserNameField: UITextField!
+    @IBOutlet var btnLogin: UIButton!
+    @IBOutlet var actLoginLoading: UIActivityIndicatorView!
+    
     //-----------------------------------------------------------------------
     //  MARK: - UIViewController, BaseViewController
-    //-----------------------------------------------------------------------
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadUI()
-    }
-    
+    //-----------------------------------------------------------------------    
     
     override func configUI() { }
     
@@ -35,10 +27,24 @@ class LoginViewController: BaseViewController,
     //  MARK: - LoginPresenterDelegate
     //-----------------------------------------------------------------------
     
-    func dataLoaded() { }
+    override func loading(_ loading: Bool) {
+        if loading {
+            actLoginLoading.startAnimating()
+            btnLogin.setTitle("", for: .normal)
+            return
+        }
+        
+        actLoginLoading.stopAnimating()
+        btnLogin.setTitle(Constants.Strings.Login, for: .normal)
+    }
     
     //-----------------------------------------------------------------------
     //  MARK: - Custom methods
     //-----------------------------------------------------------------------
     
+    @IBAction func makeLogin(_ sender: UIButton) {
+        view.endEditing(true)
+        
+        presenter.makeLogin(gitHubUser: txtUserNameField.text)
+    }
 }
