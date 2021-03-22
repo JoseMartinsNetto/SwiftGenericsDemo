@@ -64,7 +64,7 @@ class BaseRouter {
     }
     
     func routeToFollowers() {
-        
+        FollowersRouter().show()
     }
 }
 

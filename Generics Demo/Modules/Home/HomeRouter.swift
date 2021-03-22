@@ -19,7 +19,6 @@ class HomeRouter: BaseRouter {
             viewController = controller
             
             let presenter = HomePresenter(delegate: controller)
-            presenter.view = controller
             presenter.router = self
             
             controller.presenter = presenter

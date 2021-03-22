@@ -16,7 +16,7 @@ protocol LoginPresenterDelegate: BasePresenterDelegate { }
 //  MARK: - Presenter
 //-----------------------------------------------------------------------
 
-class LoginPresenter: BasePresenter<LoginRouter, LoginViewController, LoginRepository> {
+class LoginPresenter: BasePresenter<LoginRouter, LoginRepository> {
     
     var delegate: LoginPresenterDelegate!
     
@@ -29,7 +29,6 @@ class LoginPresenter: BasePresenter<LoginRouter, LoginViewController, LoginRepos
     func makeLogin(gitHubUser: String?) {
         guard let user = gitHubUser, !user.isEmpty else {
             delegate.alert(Constants.Message.GitHubUserRequired, .warning)
-            
             return
         }
         
@@ -46,7 +45,5 @@ class LoginPresenter: BasePresenter<LoginRouter, LoginViewController, LoginRepos
             
             self.delegate.alert(Constants.Message.GitHubUserNotFound, .error)
         }
-        
-        
     }
 }

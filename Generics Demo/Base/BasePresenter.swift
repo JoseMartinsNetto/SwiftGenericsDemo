@@ -13,10 +13,9 @@ protocol BasePresenterDelegate {
     func loading(_ loading: Bool)
 }
 
-class BasePresenter<TRouter: BaseRouter, TViewController: BaseViewController, TRepository: BaseRepository> {
+class BasePresenter<TRouter: BaseRouter, TRepository: BaseRepository> {
     
     var router: TRouter!
-    var view: TViewController!
     var repository: TRepository!
     
     func closeView(animated: Bool = true) {

@@ -20,7 +20,6 @@ class LoginRouter: BaseRouter {
             let presenter = LoginPresenter(delegate: controller)
             
             presenter.repository = LoginRepository()
-            presenter.view = controller
             presenter.router = self
             
             controller.presenter = presenter

@@ -7,6 +7,6 @@
 
 import UIKit
 
-class BaseTableViewCell: UITableViewCell {
-    
+class BaseTableViewCell<U>: UITableViewCell {
+    var item: U!
 }

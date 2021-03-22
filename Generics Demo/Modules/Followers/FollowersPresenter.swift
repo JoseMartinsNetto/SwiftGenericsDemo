@@ -1,5 +1,5 @@
 //
-//  HomePresenter.swift
+//  FollowersPresenter.swift
 //
 //  Created by José Martins on 22/03/2021.
 //
@@ -10,7 +10,7 @@ import Foundation
 //  MARK: - Presenter Delegate
 //-----------------------------------------------------------------------
 
-protocol HomePresenterDelegate: BasePresenterDelegate {
+protocol FollowersPresenterDelegate: BasePresenterDelegate {
     func dataLoaded()
 }
 
@@ -18,26 +18,13 @@ protocol HomePresenterDelegate: BasePresenterDelegate {
 //  MARK: - Presenter
 //-----------------------------------------------------------------------
 
-class HomePresenter: BasePresenter<HomeRouter, HomeRepository> {
+class FollowersPresenter: BasePresenter<FollowersRouter, RepositoriesRepository> {
     
-    var delegate: HomePresenterDelegate!
+    var delegate: FollowersPresenterDelegate!
     
-    init (delegate: HomePresenterDelegate!) {
+    init (delegate: FollowersPresenterDelegate!) {
         self.delegate = delegate
         
         super.init()
-    }
-    
-    func routeToRepositories() {
-        self.router.routeToRepositories()
-    }
-    
-    func routeToFollowers() {
-        self.router.routeToFollowers()
-    }
-    
-    func logOut() {
-        Session.logout()
-        self.router.routeToLogin()
     }
 }
