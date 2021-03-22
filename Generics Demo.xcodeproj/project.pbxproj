@@ -46,6 +46,11 @@
 		828B66A32608548D00C9E7E2 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828B66A22608548D00C9E7E2 /* UIApplicationExtension.swift */; };
 		828B66AA260855F500C9E7E2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828B66A9260855F500C9E7E2 /* BaseViewController.swift */; };
 		828B66B226085CD900C9E7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828B66B026085CBC00C9E7E2 /* Main.storyboard */; };
+		828EB0A72608EC7C00F00CB2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828EB0A62608EC7C00F00CB2 /* Home.storyboard */; };
+		828EB0AD2608ED3300F00CB2 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0A92608ED3300F00CB2 /* HomeRouter.swift */; };
+		828EB0AE2608ED3300F00CB2 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0AA2608ED3300F00CB2 /* HomePresenter.swift */; };
+		828EB0AF2608ED3300F00CB2 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0AB2608ED3300F00CB2 /* HomeRepository.swift */; };
+		828EB0B02608ED3300F00CB2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0AC2608ED3300F00CB2 /* HomeViewController.swift */; };
 		828F893B260863B700BE4E2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F893A260863B700BE4E2C /* Constants.swift */; };
 		828F894326086B5D00BE4E2C /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F894226086B5D00BE4E2C /* BaseRepository.swift */; };
 		828F89492608706D00BE4E2C /* URLResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F89482608706D00BE4E2C /* URLResponseExtension.swift */; };
@@ -96,6 +101,11 @@
 		828B66A22608548D00C9E7E2 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		828B66A9260855F500C9E7E2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		828B66B026085CBC00C9E7E2 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		828EB0A62608EC7C00F00CB2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		828EB0A92608ED3300F00CB2 /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		828EB0AA2608ED3300F00CB2 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		828EB0AB2608ED3300F00CB2 /* HomeRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		828EB0AC2608ED3300F00CB2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		828F893A260863B700BE4E2C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		828F894226086B5D00BE4E2C /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		828F89482608706D00BE4E2C /* URLResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseExtension.swift; sourceTree = "<group>"; };
@@ -218,6 +228,11 @@
 		828B664626080B3D00C9E7E2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				828EB0A62608EC7C00F00CB2 /* Home.storyboard */,
+				828EB0AC2608ED3300F00CB2 /* HomeViewController.swift */,
+				828EB0AA2608ED3300F00CB2 /* HomePresenter.swift */,
+				828EB0AB2608ED3300F00CB2 /* HomeRepository.swift */,
+				828EB0A92608ED3300F00CB2 /* HomeRouter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -409,6 +424,7 @@
 				828B667B26084B1200C9E7E2 /* Poppins-ExtraBold.ttf in Resources */,
 				828B667826084B1200C9E7E2 /* Poppins-Thin.ttf in Resources */,
 				828B667526084B1200C9E7E2 /* Poppins-Italic.ttf in Resources */,
+				828EB0A72608EC7C00F00CB2 /* Home.storyboard in Resources */,
 				8256E313260801030028159C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,20 +484,24 @@
 				828B668D2608510800C9E7E2 /* LoginRepository.swift in Sources */,
 				828B66962608516900C9E7E2 /* AnimationUtils.swift in Sources */,
 				828B664C26080D6B00C9E7E2 /* Session.swift in Sources */,
+				828EB0AF2608ED3300F00CB2 /* HomeRepository.swift in Sources */,
 				828B668E2608510800C9E7E2 /* LoginPresenter.swift in Sources */,
 				828B66AA260855F500C9E7E2 /* BaseViewController.swift in Sources */,
 				828F89492608706D00BE4E2C /* URLResponseExtension.swift in Sources */,
 				828B66A32608548D00C9E7E2 /* UIApplicationExtension.swift in Sources */,
+				828EB0B02608ED3300F00CB2 /* HomeViewController.swift in Sources */,
 				828B669D2608523800C9E7E2 /* Enums.swift in Sources */,
 				8256E30A260800FF0028159C /* AppDelegate.swift in Sources */,
 				828B664826080CE000C9E7E2 /* BaseRouter.swift in Sources */,
 				828B66562608352500C9E7E2 /* BaseTableViewCell.swift in Sources */,
 				828B665026080DD300C9E7E2 /* User.swift in Sources */,
 				828B66902608510800C9E7E2 /* LoginRouter.swift in Sources */,
+				828EB0AD2608ED3300F00CB2 /* HomeRouter.swift in Sources */,
 				828B668F2608510800C9E7E2 /* LoginViewController.swift in Sources */,
 				8256E30C260800FF0028159C /* SceneDelegate.swift in Sources */,
 				828F894326086B5D00BE4E2C /* BaseRepository.swift in Sources */,
 				828F893B260863B700BE4E2C /* Constants.swift in Sources */,
+				828EB0AE2608ED3300F00CB2 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

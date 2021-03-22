@@ -9,7 +9,13 @@ import Foundation
 
 class Constants: NSObject {
     struct API {
-        static let BaseURL = ""
+        static let BaseURL = "https://api.github.com"
+        
+        struct Endpoint {
+            static let UserData = "/users/{userName}"
+            static let Followers = "/users/{userName}/followers"
+            static let Repositories = "/users/{userName}/repos"
+        }
     }
     
     struct Strings {

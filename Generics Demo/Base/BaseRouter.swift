@@ -14,8 +14,13 @@ class BaseRouter {
     
     func getRootView() -> UIViewController {
         
-        let navigationVC = UINavigationController(rootViewController: LoginRouter().viewController)
-        navigationVC.navigationController?.setNavigationBarHidden(true, animated: false)
+        var navigationVC: UINavigationController!
+        
+        if let login = Session.get()?.login, !login.isEmpty {
+            navigationVC = UINavigationController(rootViewController: HomeRouter().viewController)
+        } else  {
+            navigationVC = UINavigationController(rootViewController: LoginRouter().viewController)
+        }
         
         return navigationVC
     }
@@ -44,6 +49,22 @@ class BaseRouter {
     func closeAllViews(animated: Bool = true) {
         
         UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: animated, completion: nil)
+    }
+    
+    func routeToHome() {
+        HomeRouter().show()
+    }
+    
+    func routeToLogin() {
+        LoginRouter().show()
+    }
+    
+    func routeToRepositories() {
+        
+    }
+    
+    func routeToFollowers() {
+        
     }
 }
 

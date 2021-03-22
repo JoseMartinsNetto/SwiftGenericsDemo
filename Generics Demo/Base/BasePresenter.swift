@@ -13,10 +13,11 @@ protocol BasePresenterDelegate {
     func loading(_ loading: Bool)
 }
 
-class BasePresenter<T: BaseRouter, U: BaseViewController> {
+class BasePresenter<TRouter: BaseRouter, TViewController: BaseViewController, TRepository: BaseRepository> {
     
-    var view: U!
-    var router: T!
+    var router: TRouter!
+    var view: TViewController!
+    var repository: TRepository!
     
     func closeView(animated: Bool = true) {
         

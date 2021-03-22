@@ -83,8 +83,32 @@ class Session: NSObject {
             return user
             
         }
-        
-        
         return nil
+    }
+    
+    static func logout() {
+        
+        let defaults = UserDefaults.standard
+        
+        defaults.removeObject(forKey: "User_login")
+        defaults.removeObject(forKey: "User_id")
+        defaults.removeObject(forKey: "User_node_id")
+        defaults.removeObject(forKey: "User_avatar_url")
+        defaults.removeObject(forKey: "User_gravatar_id")
+        defaults.removeObject(forKey: "User_url")
+        defaults.removeObject(forKey: "User_html_url")
+        defaults.removeObject(forKey: "User_followers_url")
+        defaults.removeObject(forKey: "User_following_url")
+        defaults.removeObject(forKey: "User_gists_url")
+        defaults.removeObject(forKey: "User_starred_url")
+        defaults.removeObject(forKey: "User_subscriptions_url")
+        defaults.removeObject(forKey: "User_organizations_url")
+        defaults.removeObject(forKey: "User_repos_url")
+        defaults.removeObject(forKey: "User_events_url")
+        defaults.removeObject(forKey: "User_received_events_url")
+        defaults.removeObject(forKey: "User_type")
+        defaults.removeObject(forKey: "User_site_admin")
+        
+        defaults.synchronize()
     }
 }

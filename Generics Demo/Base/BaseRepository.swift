@@ -14,7 +14,12 @@ struct APIResponseError: Codable {
 }
 
 class BaseRepository {
-    func request<T: Codable, U: Codable>(endpoint: String, type: RequestType = .get, responseType: T.Type, errorType: U.Type, completion: @escaping (_ response: T?, _ error: U?, _ statusCode: Int?) -> Void ) {
+    func request<TRequestResponse: Codable, TRequestError: Codable>(
+        endpoint: String,
+        type: RequestType = .get,
+        responseType: TRequestResponse.Type,
+        errorType: TRequestError.Type,
+        completion: @escaping (_ response: TRequestResponse?, _ error: TRequestError?, _ statusCode: Int?) -> Void ) {
         
         DispatchQueue.global().async {
             
@@ -23,7 +28,7 @@ class BaseRepository {
             request.httpMethod = self.getRequestTypeString(type)
             request.timeoutInterval = 20
             request.cachePolicy = .useProtocolCachePolicy
-            request.url = URL(string: Constants.API.BaseURL)
+            request.url = URL(string: Constants.API.BaseURL + endpoint)
             
             request.setValue("*/*", forHTTPHeaderField: "Accept")
             request.setValue("no-cache", forHTTPHeaderField: "Cache-Control")
@@ -31,6 +36,7 @@ class BaseRepository {
             
             print("------------------------------------------------------------------")
             print("Request URL: \(request.url!.absoluteString)")
+            print("Request Type: \(request.httpMethod)")
             print("------------------------------------------------------------------")
             
             URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
@@ -43,23 +49,23 @@ class BaseRepository {
                             
                             guard error == nil else {
                                 
-                                let obj = try JSONDecoder().decode(U.self, from: responseData)
+                                let obj = try JSONDecoder().decode(TRequestError.self, from: responseData)
                                 completion(nil, obj, statusCode)
                                 
                                 return
                             }
                             
-                            let obj = try JSONDecoder().decode(T.self, from: responseData)
+                            let obj = try JSONDecoder().decode(TRequestResponse.self, from: responseData)
                             completion(obj, nil, statusCode)
                         }
                         
                     } catch {
-                        print(error.localizedDescription)
+                        print(error)
                         completion(nil, nil, nil)
                     }
                 }
                 
-            }
+            }.resume()
         }
         
     }

@@ -18,9 +18,12 @@ class LoginRouter: BaseRouter {
         if let controller = vc as? LoginViewController {
             
             let presenter = LoginPresenter(delegate: controller)
+            
+            presenter.repository = LoginRepository()
+            presenter.view = controller
+            presenter.router = self
+            
             controller.presenter = presenter
-            controller.presenter.view = controller
-            controller.presenter.router = self
             
             viewController = controller
         }
