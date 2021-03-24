@@ -28,8 +28,8 @@ class HomePresenter: BasePresenter<HomeRouter, HomeRepository, HomeViewControlle
         super.init()
     }
     
-    func routeToRepositories() {
-        self.router.routeToRepositories()
+    func routeToRepos() {
+        self.router.routeToRepos()
     }
     
     func routeToFollowers() {

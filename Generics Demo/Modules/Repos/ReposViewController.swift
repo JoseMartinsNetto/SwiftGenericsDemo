@@ -25,5 +25,8 @@ final class ReposViewController: BaseTableViewController<RepoTableViewCell, Repo
     
     // MARK: - PresenterDelegate
     
-    func dataLoaded() { }
+    func dataLoaded(repos: [Repo]) {
+        items = repos
+        tableView.reloadData()
+    }
 }

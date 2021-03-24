@@ -14,7 +14,7 @@ class Constants: NSObject {
         struct Endpoint {
             static let UserData = "/users/{userName}"
             static let Followers = "/users/{userName}/followers"
-            static let Repositories = "/users/{userName}/repos"
+            static let Repos = "/users/{userName}/repos"
         }
     }
     
@@ -26,5 +26,6 @@ class Constants: NSObject {
         static let GitHubUserRequired = "O campo usuário do GitHub é Obrigatório"
         static let GitHubLoadUserError = "Um erro ocorreu ou tentar encontrar seus dados no GitHub"
         static let FollowerLoadError = "Um erro ocorreu ou tentar emcontrar seus seguidores no GitHub"
+        static let ReposLoadError = "Um erro ocorreu ou tentar emcontrar seus repositórios no GitHub"
     }
 }

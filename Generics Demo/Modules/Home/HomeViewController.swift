@@ -48,7 +48,7 @@ class HomeViewController: BaseViewController,
                 to: currentView,
                 point: gesture.location(in: currentView)) {
                 
-                self.presenter.routeToRepositories()
+                self.presenter.routeToRepos()
             }
         }
     }

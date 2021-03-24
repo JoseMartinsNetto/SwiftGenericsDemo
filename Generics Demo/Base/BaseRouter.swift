@@ -59,8 +59,8 @@ class BaseRouter<T: UIViewController> {
         LoginRouter().show()
     }
     
-    func routeToRepositories() {
-        
+    func routeToRepos() {
+        ReposRouter().show()
     }
     
     func routeToFollowers() {

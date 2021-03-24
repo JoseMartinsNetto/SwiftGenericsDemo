@@ -9,7 +9,7 @@ import Foundation
 //  MARK: - Presenter Delegate
 
 protocol ReposPresenterDelegate: BasePresenterDelegate {
-    func dataLoaded()
+    func dataLoaded(repos: [Repo])
 }
 
 //  MARK: - Presenter
@@ -25,6 +25,20 @@ class ReposPresenter: BasePresenter< ReposRouter, ReposRepository, ReposViewCont
     }
     
     func loadData() {
-        
+        if let user = Session.get()?.login {
+            self.repository.loadData(gitHubUser: user) { (response, error) in
+                if let repos = response {
+                    self.delegate.dataLoaded(repos: repos)
+                    return
+                }
+                
+                if let error = error {
+                    self.delegate.alert(error.message, .error)
+                    return
+                }
+                
+                self.delegate.alert(Constants.Message.ReposLoadError, .error)
+            }
+        }
     }
 }
