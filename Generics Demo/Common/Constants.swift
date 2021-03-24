@@ -25,7 +25,7 @@ class Constants: NSObject {
     
     struct ScreenTitles {
         static let Repos = "Repositórios"
-        static let Followers = "Repositórios"
+        static let Followers = "Seguidores"
     }
     
     struct Message {
