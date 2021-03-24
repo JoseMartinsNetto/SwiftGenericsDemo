@@ -10,7 +10,7 @@ import Foundation
 class FollowersCell: BaseTableViewCell<Follower> {
     override var item: Follower! {
         didSet {
-            textLabel?.text = item.name
+            textLabel?.text = item.userName
         }
     }
 }

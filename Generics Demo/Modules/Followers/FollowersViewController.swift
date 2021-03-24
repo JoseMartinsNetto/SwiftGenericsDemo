@@ -11,25 +11,22 @@ class FollowersViewController: BaseTableViewController<FollowersCell, Follower>,
     
     var presenter: FollowersPresenter!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        items = [
-            Follower(name: "Donald Trump"),
-            Follower(name: "Barack Obama")
-        ]
+    // MARK: - BaseTableViewController
+    
+    override func configUI() {
+        super.configUI()
+    }
+    
+    override func loadUI() {
+        super.loadUI()
+        
+        presenter.loadData()
     }
     
     // MARK: - PresenterDelegate
     
-    func dataLoaded() {
-        
-    }
-    
-    func alert(_ message: String, _ type: MessageType) {
-        
-    }
-    
-    func loading(_ loading: Bool) {
-        
+    func dataLoaded(followers: [Follower]) {
+        items = followers
+        tableView.reloadData()
     }
 }

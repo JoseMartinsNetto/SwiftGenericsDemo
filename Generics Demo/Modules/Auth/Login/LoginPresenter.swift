@@ -43,7 +43,12 @@ class LoginPresenter: BasePresenter<LoginRouter, LoginRepository> {
                 return
             }
             
-            self.delegate.alert(Constants.Message.GitHubUserNotFound, .error)
+            if let error = error {
+                self.delegate.alert(error.message, .error)
+                return
+            }
+            
+            self.delegate.alert(Constants.Message.GitHubLoadUserError, .error)
         }
     }
 }

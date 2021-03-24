@@ -13,12 +13,13 @@ struct APIResponseError: Codable {
     var documentation_url: String
 }
 
+
 class BaseRepository {
     func request<TRequestResponse: Codable, TRequestError: Codable>(
         endpoint: String,
         type: RequestType = .get,
         responseType: TRequestResponse.Type,
-        errorType: TRequestError.Type,
+        errorType: TRequestError.Type = APIResponseError.self as! TRequestError.Type,
         completion: @escaping (_ response: TRequestResponse?, _ error: TRequestError?, _ statusCode: Int?) -> Void ) {
         
         DispatchQueue.global().async {
@@ -44,19 +45,32 @@ class BaseRepository {
                 DispatchQueue.main.async {
                     do {
                         if let responseData = data {
-                            
-                            let statusCode = response?.getStatusCode()
+                            if let responseString = String(data: responseData, encoding: .utf8) {
+                                
+                                print("------------------------------------------------------------------")
+                                print("Response data:")
+                                print(responseString)
+                                print("------------------------------------------------------------------")
+                            }
                             
                             guard error == nil else {
                                 
+                                let obj = APIResponseError(message: error.debugDescription, documentation_url: "")
+                                completion(nil, obj as? TRequestError, response?.getStatusCode())
+                                
+                                return
+                            }
+                            
+                            if let code = response?.getStatusCode(), code >= 400 {
+                                
                                 let obj = try JSONDecoder().decode(TRequestError.self, from: responseData)
-                                completion(nil, obj, statusCode)
+                                completion(nil, obj, code)
                                 
                                 return
                             }
                             
                             let obj = try JSONDecoder().decode(TRequestResponse.self, from: responseData)
-                            completion(obj, nil, statusCode)
+                            completion(obj, nil, response?.getStatusCode())
                         }
                         
                     } catch {

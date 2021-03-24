@@ -7,7 +7,9 @@
 
 import UIKit
 
-class BaseTableViewController<T: BaseTableViewCell<U>, U>: UITableViewController {
+class BaseTableViewController<T: BaseTableViewCell<U>, U>: UITableViewController,
+                                                           BasePresenterDelegate,
+                                                           BaseViewControllerProtocol{
     
     let cellId = "cellId"
     
@@ -17,7 +19,16 @@ class BaseTableViewController<T: BaseTableViewCell<U>, U>: UITableViewController
         super.viewDidLoad()
         
         tableView.register(T.self, forCellReuseIdentifier: cellId)
+        configUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadUI()
+    }
+    
+    // MARK: - UITableViewController
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -28,5 +39,22 @@ class BaseTableViewController<T: BaseTableViewCell<U>, U>: UITableViewController
         cell.item = items[indexPath.row]
         return cell
     }
+    
+    // MARK: - BaseViewControllerProtocol
+    
+    func configUI() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func loadUI() { }
+    
+    // MARK: - BasePresenterDelegate
+    
+    func alert(_ message: String, _ type: MessageType) {
+        AlertHelper.showAlert(message: message, type: type)
+    }
+    
+    func loading(_ loading: Bool) { }
+    
     
 }

@@ -8,5 +8,9 @@
 import Foundation
 
 struct Follower: Codable {
-    var name: String
+    var userName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case userName = "login"
+    }
 }

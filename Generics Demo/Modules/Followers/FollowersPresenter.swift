@@ -11,14 +11,14 @@ import Foundation
 //-----------------------------------------------------------------------
 
 protocol FollowersPresenterDelegate: BasePresenterDelegate {
-    func dataLoaded()
+    func dataLoaded(followers: [Follower])
 }
 
 //-----------------------------------------------------------------------
 //  MARK: - Presenter
 //-----------------------------------------------------------------------
 
-class FollowersPresenter: BasePresenter<FollowersRouter, RepositoriesRepository> {
+class FollowersPresenter: BasePresenter<FollowersRouter, FollowersRepository> {
     
     var delegate: FollowersPresenterDelegate!
     
@@ -26,5 +26,23 @@ class FollowersPresenter: BasePresenter<FollowersRouter, RepositoriesRepository>
         self.delegate = delegate
         
         super.init()
+    }
+    
+    func loadData() {
+        if let gitHubUser = Session.get()?.login {
+            self.repository.loadFollowers(gitHubUser: gitHubUser) { (response, error) in
+                if let response = response {
+                    self.delegate.dataLoaded(followers: response)
+                    return
+                }
+                
+                if let error = error {
+                    self.delegate.alert(error.message, .error)
+                    return
+                }
+                
+                self.delegate.alert(Constants.Message.FollowerLoadError, .error)
+            }
+        }
     }
 }

@@ -57,13 +57,12 @@
                                                 <color key="textColor" name="White"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5En-cT-lXO">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5En-cT-lXO">
                                                 <rect key="frame" x="30" y="362.5" width="315" height="44"/>
                                                 <color key="backgroundColor" name="BlackBlue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="qYh-ii-Zqs"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                                 <state key="normal" title="Entrar">
                                                     <color key="titleColor" name="White"/>
                                                 </state>

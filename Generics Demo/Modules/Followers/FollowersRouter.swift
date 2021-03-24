@@ -12,13 +12,13 @@ class FollowersRouter: BaseRouter {
         super.init()
         
         let controller = FollowersViewController()
+        viewController = controller
         
         let presenter = FollowersPresenter(delegate: controller)
-        
         presenter.router = self
+        presenter.repository = FollowersRepository()
         
         controller.presenter = presenter
         
-        viewController = controller
     }
 }

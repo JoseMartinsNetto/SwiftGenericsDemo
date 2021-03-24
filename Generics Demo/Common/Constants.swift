@@ -24,6 +24,7 @@ class Constants: NSObject {
     
     struct Message {
         static let GitHubUserRequired = "O campo usuário do GitHub é Obrigatório"
-        static let GitHubUserNotFound = "O usuário do GitHub não foi encontrado"
+        static let GitHubLoadUserError = "Um erro ocorreu ou tentar encontrar seus dados no GitHub"
+        static let FollowerLoadError = "Um erro ocorreu ou tentar emcontrar seus seguidores no GitHub"
     }
 }
