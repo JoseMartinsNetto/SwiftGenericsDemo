@@ -15,6 +15,8 @@ final class ReposViewController: BaseTableViewController<RepoTableViewCell, Repo
     
     override func configUI() {
         super.configUI()
+        
+        navigationItem.title = Constants.ScreenTitles.Repos
     }
     
     override func loadUI() {

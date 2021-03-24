@@ -30,7 +30,10 @@ final class FollowersPresenter: BasePresenter<FollowersRouter, FollowersReposito
     
     func loadData() {
         if let gitHubUser = Session.get()?.login {
+            delegate.loading(true)
             self.repository.loadFollowers(gitHubUser: gitHubUser) { (response, error) in
+                self.delegate.loading(false)
+                
                 if let response = response {
                     self.delegate.dataLoaded(followers: response)
                     return

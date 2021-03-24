@@ -44,6 +44,11 @@ class BaseTableViewController<T: BaseTableViewCell<U>, U>: UITableViewController
     
     func configUI() {
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        view.backgroundColor = Constants.UI.Colors.DarkGray
+        
+        tableView.backgroundColor = Constants.UI.Colors.DarkGray
+        tableView.separatorStyle = .none
     }
     
     func loadUI() { }
@@ -54,7 +59,9 @@ class BaseTableViewController<T: BaseTableViewCell<U>, U>: UITableViewController
         AlertHelper.showAlert(message: message, type: type)
     }
     
-    func loading(_ loading: Bool) { }
+    func loading(_ loading: Bool) {
+        AnimationsUtils.loading(loading)
+    }
     
     
 }

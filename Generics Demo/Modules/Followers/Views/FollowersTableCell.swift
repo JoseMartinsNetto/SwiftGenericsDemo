@@ -1,13 +1,13 @@
 //
-//  ReposCell.swift
+//  FollowersTableViewCell.swift
 //  Generics Demo
 //
 //  Created by Jose Martins on 22/03/21.
 //
 
-import Foundation
+import UIKit
 
-class FollowersCell: BaseTableViewCell<Follower> {
+class FollowersTableViewCell: BaseTableViewCell<Follower> {
     override var item: Follower! {
         didSet {
             textLabel?.text = item.userName

@@ -10,5 +10,6 @@ target 'Generics Demo' do
 
   pod 'RKDropdownAlert', '0.3.0'
   pod 'TPKeyboardAvoiding', '1.3.4'
+  pod 'lottie-ios', '3.0.7'
 
 end

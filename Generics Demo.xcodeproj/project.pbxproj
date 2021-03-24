@@ -46,6 +46,7 @@
 		828B66A32608548D00C9E7E2 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828B66A22608548D00C9E7E2 /* UIApplicationExtension.swift */; };
 		828B66AA260855F500C9E7E2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828B66A9260855F500C9E7E2 /* BaseViewController.swift */; };
 		828B66B226085CD900C9E7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828B66B026085CBC00C9E7E2 /* Main.storyboard */; };
+		828BB6A1260BEC7C00CCF18F /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 828BB6A0260BEC7C00CCF18F /* loading.json */; };
 		828EB0A72608EC7C00F00CB2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828EB0A62608EC7C00F00CB2 /* Home.storyboard */; };
 		828EB0AD2608ED3300F00CB2 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0A92608ED3300F00CB2 /* HomeRouter.swift */; };
 		828EB0AE2608ED3300F00CB2 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0AA2608ED3300F00CB2 /* HomePresenter.swift */; };
@@ -56,7 +57,7 @@
 		828EB0B92608F8B900F00CB2 /* FollowersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0B52608F8B900F00CB2 /* FollowersRepository.swift */; };
 		828EB0BA2608F8B900F00CB2 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0B62608F8B900F00CB2 /* FollowersViewController.swift */; };
 		828EB0BE2608FC0400F00CB2 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0BD2608FC0400F00CB2 /* Follower.swift */; };
-		828EB0C32608FCB000F00CB2 /* FollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0C22608FCB000F00CB2 /* FollowersCell.swift */; };
+		828EB0C32608FCB000F00CB2 /* FollowersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828EB0C22608FCB000F00CB2 /* FollowersTableCell.swift */; };
 		828F893B260863B700BE4E2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F893A260863B700BE4E2C /* Constants.swift */; };
 		828F894326086B5D00BE4E2C /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F894226086B5D00BE4E2C /* BaseRepository.swift */; };
 		828F89492608706D00BE4E2C /* URLResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F89482608706D00BE4E2C /* URLResponseExtension.swift */; };
@@ -113,6 +114,7 @@
 		828B66A22608548D00C9E7E2 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		828B66A9260855F500C9E7E2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		828B66B026085CBC00C9E7E2 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		828BB6A0260BEC7C00CCF18F /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		828EB0A62608EC7C00F00CB2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		828EB0A92608ED3300F00CB2 /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		828EB0AA2608ED3300F00CB2 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -123,7 +125,7 @@
 		828EB0B52608F8B900F00CB2 /* FollowersRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersRepository.swift; sourceTree = "<group>"; };
 		828EB0B62608F8B900F00CB2 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		828EB0BD2608FC0400F00CB2 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
-		828EB0C22608FCB000F00CB2 /* FollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCell.swift; sourceTree = "<group>"; };
+		828EB0C22608FCB000F00CB2 /* FollowersTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableCell.swift; sourceTree = "<group>"; };
 		828F893A260863B700BE4E2C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		828F894226086B5D00BE4E2C /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		828F89482608706D00BE4E2C /* URLResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseExtension.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		828B665F26084ACC00C9E7E2 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				828BB69E260BEC4D00CCF18F /* Animations */,
 				828B666026084AD800C9E7E2 /* Fonts */,
 			);
 			path = Files;
@@ -372,10 +375,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		828BB69E260BEC4D00CCF18F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				828BB69F260BEC5B00CCF18F /* Loading */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		828BB69F260BEC5B00CCF18F /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				828BB6A0260BEC7C00CCF18F /* loading.json */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		828EB0C12608FC9D00F00CB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				828EB0C22608FCB000F00CB2 /* FollowersCell.swift */,
+				828EB0C22608FCB000F00CB2 /* FollowersTableCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -457,6 +476,7 @@
 			files = (
 				828B667726084B1200C9E7E2 /* Poppins-Light.ttf in Resources */,
 				828B667426084B1200C9E7E2 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				828BB6A1260BEC7C00CCF18F /* loading.json in Resources */,
 				828B667D26084B1200C9E7E2 /* Poppins-BoldItalic.ttf in Resources */,
 				828B667626084B1200C9E7E2 /* Poppins-Bold.ttf in Resources */,
 				828B667926084B1200C9E7E2 /* Poppins-ExtraLight.ttf in Resources */,
@@ -565,7 +585,7 @@
 				828F894326086B5D00BE4E2C /* BaseRepository.swift in Sources */,
 				828F893B260863B700BE4E2C /* Constants.swift in Sources */,
 				828EB0AE2608ED3300F00CB2 /* HomePresenter.swift in Sources */,
-				828EB0C32608FCB000F00CB2 /* FollowersCell.swift in Sources */,
+				828EB0C32608FCB000F00CB2 /* FollowersTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

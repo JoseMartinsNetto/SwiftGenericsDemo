@@ -26,7 +26,11 @@ class ReposPresenter: BasePresenter< ReposRouter, ReposRepository, ReposViewCont
     
     func loadData() {
         if let user = Session.get()?.login {
+            delegate.loading(true)
             self.repository.loadData(gitHubUser: user) { (response, error) in
+                
+                self.delegate.loading(false)
+                
                 if let repos = response {
                     self.delegate.dataLoaded(repos: repos)
                     return

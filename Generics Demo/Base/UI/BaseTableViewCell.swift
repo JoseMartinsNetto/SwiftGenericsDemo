@@ -8,5 +8,12 @@
 import UIKit
 
 class BaseTableViewCell<U>: UITableViewCell {
-    var item: U!
+    var item: U!    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        backgroundColor =  Constants.UI.Colors.DarkGray
+        textLabel!.textColor = Constants.UI.Colors.White
+    }
 }

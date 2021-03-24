@@ -6,94 +6,75 @@
 //
 
 import UIKit
+import Lottie
 
 final class AnimationsUtils {
     
     private static var loadingMask = UIView(frame: UIScreen.main.bounds)
     
-//    private static func showLoading(color: LoadingColor) {
-//
-//        if loadingMask.subviews.count > 0 {
-//            return
-//        }
-//
-//        loadingMask.alpha = 0
-//        loadingMask.frame = UIScreen.shared.viewportBounds()
-//
-//        if Preferences.themeMode == .dark {
-//            loadingMask.backgroundColor = UIColor.black.withAlphaComponent(0.7)
-//        }else{
-//            loadingMask.backgroundColor = UIColor.white.withAlphaComponent(0.7)
-//        }
-//
-//        //  Animation
-//
-//        let hudSquare: CGFloat = 180
-//
-//        var hudCenter = loadingMask.center
-//        hudCenter.x -= hudSquare/2
-//        hudCenter.y -= hudSquare/2
-//
-//        if color == .blue {
-//            loadingMask.addSubview(self.getLottieLoadingBlueAnimation(center: hudCenter, size: hudSquare))
-//        }
-//
-//        if color == .white {
-//            loadingMask.addSubview(self.getLottieLoadingWhiteAnimation(center: hudCenter, size: hudSquare))
-//        }
-//        //  Adding Mask
-//
-//        let window: UIWindow? = UIApplication.shared.windows.first
-//        window?.addSubview(loadingMask)
-//
-//        UIView.animate(withDuration: 0.3) {
-//            loadingMask.alpha = 1
-//        }
-//    }
-//
-//    private static func getLottieLoadingWhiteAnimation(center: CGPoint, size: CGFloat) -> AnimationView {
-//
-//        let animationView = AnimationView(name: "loading_white") // ./Application/Files
-//        animationView.frame = CGRect(origin: center, size: CGSize(width: size, height: size))
-//        animationView.loopMode = .loop
-//        animationView.play()
-//
-//        return animationView
-//    }
-//
-//    private static func getLottieLoadingBlueAnimation(center: CGPoint, size: CGFloat) -> AnimationView {
-//
-//        let animationView = AnimationView(name: "loading_blue") // ./Application/Files
-//        animationView.frame = CGRect(origin: center, size: CGSize(width: size, height: size))
-//        animationView.loopMode = .loop
-//        animationView.play()
-//
-//        return animationView
-//    }
-//
-//    private static func hideLoading() {
-//
-//        UIView.animate(withDuration: 0.5,
-//                       animations: {
-//                            loadingMask.alpha = 0
-//                       },
-//                       completion: { (finished) in
-//
-//                        if finished {
-//
-//                            loadingMask.removeFromSuperview()
-//                            loadingMask = UIView(frame: UIScreen.main.bounds)
-//                        }
-//                    })
-//    }
-//
-//    static func loading(_ loading: Bool, color: LoadingColor = .white) {
-//        if loading {
-//            AnimationsUtils.showLoading(color: color)
-//        }else{
-//            AnimationsUtils.hideLoading()
-//        }
-//    }
+    private static func showLoading() {
+
+        if loadingMask.subviews.count > 0 {
+            return
+        }
+
+        loadingMask.alpha = 0
+
+        loadingMask.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+
+        //  Animation
+
+        let hudSquare: CGFloat = 180
+
+        var hudCenter = loadingMask.center
+        hudCenter.x -= hudSquare/2
+        hudCenter.y -= hudSquare/2
+
+        loadingMask.addSubview(self.getLottieLoadingAnimation(center: hudCenter, size: hudSquare))
+        
+        //  Adding Mask
+
+        let window: UIWindow? = UIApplication.shared.windows.first
+        window?.addSubview(loadingMask)
+
+        UIView.animate(withDuration: 0.3) {
+            loadingMask.alpha = 1
+        }
+    }
+
+    private static func getLottieLoadingAnimation(center: CGPoint, size: CGFloat) -> AnimationView {
+
+        let animationView = AnimationView(name: "loading") // ./Application/Files
+        animationView.frame = CGRect(origin: center, size: CGSize(width: size, height: size))
+        animationView.loopMode = .loop
+        animationView.play()
+
+        return animationView
+    }
+
+    private static func hideLoading() {
+
+        UIView.animate(withDuration: 0.5,
+                       animations: {
+                            loadingMask.alpha = 0
+                       },
+                       completion: { (finished) in
+
+                        if finished {
+
+                            loadingMask.removeFromSuperview()
+                            loadingMask = UIView(frame: UIScreen.main.bounds)
+                        }
+                    })
+    }
+
+    static func loading(_ loading: Bool) {
+        if loading {
+            showLoading()
+        }else{
+            hideLoading()
+        }
+    }
     
     static func makeRippleEffect(to referenceView: UIView, point: CGPoint, completion: (() -> Void)? = nil) {
         let size = referenceView.bounds.size
@@ -163,6 +144,17 @@ final class AnimationsUtils {
     static func makeBasicAnimation(animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
         UIView.animate(withDuration: 0.3) {
             animations()
+        } completion: { isCompleted in
+            if let completion = completion {
+                completion(isCompleted)
+            }
+        }
+    }
+    
+    static func makeBasicAnimation(in view: UIView, animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
+        UIView.animate(withDuration: 0.3) {
+            animations()
+            view.layoutIfNeeded()
         } completion: { isCompleted in
             if let completion = completion {
                 completion(isCompleted)
