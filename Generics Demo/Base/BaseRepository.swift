@@ -7,15 +7,13 @@
 
 import Foundation
 
-
 struct APIResponseError: Codable {
     var message: String
     var documentation_url: String
 }
 
-
 class BaseRepository {
-    func request<TRequestResponse: Codable, TRequestError: Codable>(
+    internal func request<TRequestResponse: Codable, TRequestError: Codable>(
         endpoint: String,
         type: RequestType = .get,
         responseType: TRequestResponse.Type,

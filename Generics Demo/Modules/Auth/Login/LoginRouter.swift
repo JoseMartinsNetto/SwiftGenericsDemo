@@ -6,25 +6,22 @@
 
 import UIKit
 
-class LoginRouter: BaseRouter {
+class LoginRouter: BaseRouter<LoginViewController> {
     
     let storyboard = UIStoryboard(name: "Auth", bundle: nil)
     
     override init() {
         super.init()
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginView")
-        
-        if let controller = vc as? LoginViewController {
+        if let controller = storyboard.instantiateViewController(withIdentifier: "LoginView") as? LoginViewController {
+            viewController = controller
             
             let presenter = LoginPresenter(delegate: controller)
             
             presenter.repository = LoginRepository()
             presenter.router = self
             
-            controller.presenter = presenter
-            
-            viewController = controller
+            viewController.presenter = presenter
         }
     }
 }

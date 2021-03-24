@@ -6,19 +6,18 @@
 
 import UIKit
 
-class FollowersRouter: BaseRouter {
+final class FollowersRouter: BaseRouter<FollowersViewController> {
     
     override init() {
         super.init()
         
-        let controller = FollowersViewController()
-        viewController = controller
+        viewController = FollowersViewController()
         
-        let presenter = FollowersPresenter(delegate: controller)
+        let presenter = FollowersPresenter(delegate: viewController)
         presenter.router = self
         presenter.repository = FollowersRepository()
         
-        controller.presenter = presenter
+        viewController.presenter = presenter
         
     }
 }

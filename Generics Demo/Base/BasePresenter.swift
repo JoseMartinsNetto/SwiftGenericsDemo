@@ -13,7 +13,7 @@ protocol BasePresenterDelegate {
     func loading(_ loading: Bool)
 }
 
-class BasePresenter<TRouter: BaseRouter, TRepository: BaseRepository> {
+class BasePresenter<TRouter: BaseRouter<TViewController>, TRepository: BaseRepository, TViewController: UIViewController> {
     
     var router: TRouter!
     var repository: TRepository!

@@ -18,7 +18,7 @@ protocol HomePresenterDelegate: BasePresenterDelegate {
 //  MARK: - Presenter
 //-----------------------------------------------------------------------
 
-class HomePresenter: BasePresenter<HomeRouter, HomeRepository> {
+class HomePresenter: BasePresenter<HomeRouter, HomeRepository, HomeViewController> {
     
     var delegate: HomePresenterDelegate!
     

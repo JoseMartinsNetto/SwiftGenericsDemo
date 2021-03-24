@@ -60,6 +60,12 @@
 		828F893B260863B700BE4E2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F893A260863B700BE4E2C /* Constants.swift */; };
 		828F894326086B5D00BE4E2C /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F894226086B5D00BE4E2C /* BaseRepository.swift */; };
 		828F89492608706D00BE4E2C /* URLResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F89482608706D00BE4E2C /* URLResponseExtension.swift */; };
+		82D2E260260BBFC0002CA96E /* ReposRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2E25C260BBFC0002CA96E /* ReposRepository.swift */; };
+		82D2E261260BBFC0002CA96E /* ReposRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2E25D260BBFC0002CA96E /* ReposRouter.swift */; };
+		82D2E262260BBFC0002CA96E /* ReposPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2E25E260BBFC0002CA96E /* ReposPresenter.swift */; };
+		82D2E263260BBFC0002CA96E /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2E25F260BBFC0002CA96E /* ReposViewController.swift */; };
+		82D2E266260BCC37002CA96E /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2E265260BCC37002CA96E /* Repo.swift */; };
+		82D2E269260BCCF6002CA96E /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2E268260BCCF6002CA96E /* RepoTableViewCell.swift */; };
 		F0CF8D115013BBBC7C239EB4 /* Pods_Generics_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F8CCF17EAA86055F300DDD2 /* Pods_Generics_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +127,12 @@
 		828F893A260863B700BE4E2C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		828F894226086B5D00BE4E2C /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		828F89482608706D00BE4E2C /* URLResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseExtension.swift; sourceTree = "<group>"; };
+		82D2E25C260BBFC0002CA96E /* ReposRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposRepository.swift; sourceTree = "<group>"; };
+		82D2E25D260BBFC0002CA96E /* ReposRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposRouter.swift; sourceTree = "<group>"; };
+		82D2E25E260BBFC0002CA96E /* ReposPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposPresenter.swift; sourceTree = "<group>"; };
+		82D2E25F260BBFC0002CA96E /* ReposViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
+		82D2E265260BCC37002CA96E /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		82D2E268260BCCF6002CA96E /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		A4EC8E365007EBE863AD85C5 /* Pods-Generics Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Generics Demo.release.xcconfig"; path = "Target Support Files/Pods-Generics Demo/Pods-Generics Demo.release.xcconfig"; sourceTree = "<group>"; };
 		C0B5AD54CE38C3409356B979 /* Pods-Generics Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Generics Demo.debug.xcconfig"; path = "Target Support Files/Pods-Generics Demo/Pods-Generics Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,7 +208,7 @@
 				828B664326080ACF00C9E7E2 /* Auth */,
 				828B664626080B3D00C9E7E2 /* Home */,
 				828B664526080B2A00C9E7E2 /* Followers */,
-				828B664426080AE700C9E7E2 /* Repositories */,
+				828B664426080AE700C9E7E2 /* Repos */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -223,11 +235,16 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		828B664426080AE700C9E7E2 /* Repositories */ = {
+		828B664426080AE700C9E7E2 /* Repos */ = {
 			isa = PBXGroup;
 			children = (
+				82D2E26B260BCD42002CA96E /* Views */,
+				82D2E25F260BBFC0002CA96E /* ReposViewController.swift */,
+				82D2E25E260BBFC0002CA96E /* ReposPresenter.swift */,
+				82D2E25C260BBFC0002CA96E /* ReposRepository.swift */,
+				82D2E25D260BBFC0002CA96E /* ReposRouter.swift */,
 			);
-			path = Repositories;
+			path = Repos;
 			sourceTree = "<group>";
 		};
 		828B664526080B2A00C9E7E2 /* Followers */ = {
@@ -272,6 +289,7 @@
 			children = (
 				828B664F26080DD300C9E7E2 /* User.swift */,
 				828EB0BD2608FC0400F00CB2 /* Follower.swift */,
+				82D2E265260BCC37002CA96E /* Repo.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -358,6 +376,14 @@
 			isa = PBXGroup;
 			children = (
 				828EB0C22608FCB000F00CB2 /* FollowersCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		82D2E26B260BCD42002CA96E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				82D2E268260BCCF6002CA96E /* RepoTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -511,12 +537,15 @@
 				828B66532608350D00C9E7E2 /* BaseTableViewController.swift in Sources */,
 				828EB0BE2608FC0400F00CB2 /* Follower.swift in Sources */,
 				828EB0B92608F8B900F00CB2 /* FollowersRepository.swift in Sources */,
+				82D2E266260BCC37002CA96E /* Repo.swift in Sources */,
 				828B668D2608510800C9E7E2 /* LoginRepository.swift in Sources */,
+				82D2E260260BBFC0002CA96E /* ReposRepository.swift in Sources */,
 				828B66962608516900C9E7E2 /* AnimationUtils.swift in Sources */,
 				828B664C26080D6B00C9E7E2 /* Session.swift in Sources */,
 				828EB0AF2608ED3300F00CB2 /* HomeRepository.swift in Sources */,
 				828B668E2608510800C9E7E2 /* LoginPresenter.swift in Sources */,
 				828B66AA260855F500C9E7E2 /* BaseViewController.swift in Sources */,
+				82D2E263260BBFC0002CA96E /* ReposViewController.swift in Sources */,
 				828F89492608706D00BE4E2C /* URLResponseExtension.swift in Sources */,
 				828B66A32608548D00C9E7E2 /* UIApplicationExtension.swift in Sources */,
 				828EB0B02608ED3300F00CB2 /* HomeViewController.swift in Sources */,
@@ -524,8 +553,11 @@
 				828EB0BA2608F8B900F00CB2 /* FollowersViewController.swift in Sources */,
 				8256E30A260800FF0028159C /* AppDelegate.swift in Sources */,
 				828B664826080CE000C9E7E2 /* BaseRouter.swift in Sources */,
+				82D2E269260BCCF6002CA96E /* RepoTableViewCell.swift in Sources */,
 				828B66562608352500C9E7E2 /* BaseTableViewCell.swift in Sources */,
+				82D2E261260BBFC0002CA96E /* ReposRouter.swift in Sources */,
 				828B665026080DD300C9E7E2 /* User.swift in Sources */,
+				82D2E262260BBFC0002CA96E /* ReposPresenter.swift in Sources */,
 				828B66902608510800C9E7E2 /* LoginRouter.swift in Sources */,
 				828EB0AD2608ED3300F00CB2 /* HomeRouter.swift in Sources */,
 				828B668F2608510800C9E7E2 /* LoginViewController.swift in Sources */,

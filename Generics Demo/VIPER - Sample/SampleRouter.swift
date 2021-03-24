@@ -2,28 +2,26 @@
 //  <#moduleName#>Router.swift
 //
 //  Created by <#dev name#> on <#file creation date m/d/y#>.
-//  Copyright © <#year#> Madeinweb. All rights reserved.
 //
 
 import UIKit
 
-class <#moduleName#>Router: BaseRouter {
+class <#moduleName#>Router: BaseRouter< <#moduleName#>ViewController >  {
     
     let storyboard = UIStoryboard(name: "<#storyboardName#>", bundle: nil)
     
     override init() {
         super.init()
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "<#viewId#>")
-        
-        if let controller = vc as? <#moduleName#>ViewController {
+        if let controller =  storyboard.instantiateViewController(withIdentifier: "<#viewId#>") as?  <#moduleName#>ViewController  {
+            viewController = controller
             
             let presenter = <#moduleName#>Presenter(delegate: controller)
-            controller.presenter = presenter
-            controller.presenter.view = viewController
-            controller.presenter.router = self
             
-            viewController = controller
+            presenter.repository = LoginRepository()
+            presenter.router = self
+            
+            viewController.presenter = presenter
         }
     }
 }

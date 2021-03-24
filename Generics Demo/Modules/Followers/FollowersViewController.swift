@@ -6,7 +6,7 @@
 
 import UIKit
 
-class FollowersViewController: BaseTableViewController<FollowersCell, Follower>,
+final class FollowersViewController: BaseTableViewController<FollowersCell, Follower>,
                                FollowersPresenterDelegate {
     
     var presenter: FollowersPresenter!

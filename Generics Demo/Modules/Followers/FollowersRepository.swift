@@ -6,7 +6,7 @@
 
 import Foundation
 
-class FollowersRepository: BaseRepository {
+final class FollowersRepository: BaseRepository {
     func loadFollowers(gitHubUser: String, completion: @escaping(_ repsonse: [Follower]?, _ error: APIResponseError?) -> Void) {
         let endpoint = Constants.API.Endpoint.Followers.replacingOccurrences(of: "{userName}", with: gitHubUser)
         

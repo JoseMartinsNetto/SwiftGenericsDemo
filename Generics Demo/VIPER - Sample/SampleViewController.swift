@@ -2,7 +2,6 @@
 //  <#moduleName#>ViewController.swift
 //
 //  Created by <#dev name#> on <#file creation date m/d/y#>.
-//  Copyright © <#year#> Madeinweb. All rights reserved.
 //
 
 import UIKit
@@ -11,40 +10,21 @@ class <#moduleName#>ViewController: BaseViewController, <#moduleName#>PresenterD
     
     var presenter: <#moduleName#>Presenter!
     
-    //-----------------------------------------------------------------------
-    //  MARK: - UIViewController
-    //-----------------------------------------------------------------------
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configUI()
+    //  MARK: - UIViewController, BaseViewController
+
+    override func configUI() {
+        super.configUI()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadUI()
+
+    override func loadUI() {
+        super.loadUI()
     }
-    
-    //-----------------------------------------------------------------------
-    //  MARK: - Presenter Delegate
-    //-----------------------------------------------------------------------
-    
-    func dataLoaded() { }
-    
-    func loading(_ loading: Bool) {
-        Util.AnimationsUtils(loading)
-    }
-    
-    func message(message: String?, type: MessageType) {
-        Util.showMessage(message, type)
-    }
-    
-    //-----------------------------------------------------------------------
+
+    //  MARK: - LoginPresenterDelegate
+
+    func dataLoaded() {}
+
     //  MARK: - Custom methods
-    //-----------------------------------------------------------------------
     
-    func configUI() { }
     
-    func loadUI() { }
 }

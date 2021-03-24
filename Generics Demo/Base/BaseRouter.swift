@@ -7,9 +7,9 @@
 
 import UIKit
 
-class BaseRouter {
+class BaseRouter<T: UIViewController> {
     
-    var viewController: UIViewController!
+    var viewController: T!
     var presentationStyles: Array<PresentationStyle> = []
     
     func getRootView() -> UIViewController {

@@ -18,7 +18,7 @@ protocol FollowersPresenterDelegate: BasePresenterDelegate {
 //  MARK: - Presenter
 //-----------------------------------------------------------------------
 
-class FollowersPresenter: BasePresenter<FollowersRouter, FollowersRepository> {
+final class FollowersPresenter: BasePresenter<FollowersRouter, FollowersRepository, FollowersViewController> {
     
     var delegate: FollowersPresenterDelegate!
     

@@ -19,9 +19,13 @@ class LoginViewController: BaseViewController,
     //  MARK: - UIViewController, BaseViewController
     //-----------------------------------------------------------------------    
     
-    override func configUI() { }
+    override func configUI() {
+        super.configUI()
+    }
     
-    override func loadUI() { }
+    override func loadUI() {
+        super.loadUI()
+    }
     
     //-----------------------------------------------------------------------
     //  MARK: - LoginPresenterDelegate
